@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header>
+    <div class="title">
+      <h2>{{ page.title | escape }}</h2>
+    </div>
+    <div class="meta">
+      <time class="published" datetime="{{page.date}}">{{page.date | date: site.date_format}}</time>
+      <a href="#" class="author"><span class="name">{{page.author}}</span></a>
+    </div>
+  </header>
+
+  <div itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  {% if site.disqus.shortname %}
+    {% include disqus_comments.html %}
+  {% endif %}
+</article>
